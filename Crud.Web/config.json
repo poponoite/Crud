@@ -1,0 +1,9 @@
+{
+  "chave": "valor",
+  "ConnectionStrings": {
+    "CrudDB": "Server=LYNXBHZAVM0002;Database=CrudDB;User Id=lynxadmin;Password=Lynx@2018;"
+  }
+
+
+
+}
