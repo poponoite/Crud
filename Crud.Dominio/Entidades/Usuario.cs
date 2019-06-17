@@ -12,6 +12,7 @@ namespace Crud.Dominio.Entidades
 
         public override void Validate()
         {
+            LimparMensagem();
             if (string.IsNullOrEmpty(Nome))
             {
                 AdicionarMensagem("O campo nome deve ser preenchido!");

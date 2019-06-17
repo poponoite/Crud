@@ -20,6 +20,10 @@ namespace Crud.Dominio.Entidades
             get { return !MensagemValidacao.Any(); }
         }
 
+        public void LimparMensagem()
+        {
+            MensagemValidacao.Clear();
+        }
 
         public void AdicionarMensagem(string mensagem)
         {

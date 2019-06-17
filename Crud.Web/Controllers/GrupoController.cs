@@ -2,46 +2,43 @@
 using Crud.Dominio.ObjetoDevalor;
 using Microsoft.AspNetCore.Mvc;
 using System;
+
 namespace Crud.Web.Controllers
 {
-    public class GrupoController : Controller
+    [Route("api/[controller]")]
+    [ApiController]
+    public class GrupoController : ControllerBase
     {
-        private readonly IGrupoRepositorio _grupoRepositorio;
+        public readonly IGrupoRepositorio _grupoRepositorio;
+
         public GrupoController(IGrupoRepositorio grupoRepositorio)
         {
             _grupoRepositorio = grupoRepositorio;
         }
 
-        [HttpGet]
+        [HttpGet()]
         public IActionResult Get()
         {
             try
             {
                 return Ok(_grupoRepositorio.ObterTodos());
-                // if (condition == false)
-                //{
-                //  return BadRequest("");
-                //}
             }
-            catch (Exception ex)
+            catch(Exception e)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(e.Message);
             }
         }
 
-        [HttpPost]
-        public IActionResult Post([FromBody]Grupo grupo)
+        public IActionResult Post([FromBody] Grupo grupo)
         {
             try
             {
-                //var usuario = new Usuario();
-                // usuario.Nome = "Luciano";
                 _grupoRepositorio.Adicionar(grupo);
-                return Created("api/Grupo", grupo);
+                return Created("api/grupo", grupo);
             }
-            catch (Exception ex)
+            catch(Exception e)
             {
-                return BadRequest(ex.ToString());
+                return BadRequest(e.ToString());
             }
         }
     }

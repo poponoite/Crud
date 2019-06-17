@@ -1,6 +1,5 @@
 ﻿using Crud.Dominio.Contratos;
 using Crud.Repositorio.Contexto;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -19,7 +18,7 @@ namespace Crud.Repositorio.Repositorios
         {
             CrudContexto.Set<TEntity>().Add(entity);
             CrudContexto.SaveChanges();
-            //throw new NotImplementedException();
+            //throw new NotImplementedException();          
         }
 
         public void Atualizar(TEntity entity)
@@ -31,6 +30,7 @@ namespace Crud.Repositorio.Repositorios
         public TEntity ObterPorId(int id)
         {
             return CrudContexto.Set<TEntity>().Find(id);
+
         }
 
         public IEnumerable<TEntity> ObterTodos()

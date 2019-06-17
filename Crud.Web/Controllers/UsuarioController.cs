@@ -18,12 +18,7 @@ namespace Crud.Web.Controllers
         {
             try
             {
-
                 return Ok(_usuarioRepositorio.ObterTodos());
-                // if (condition == false)
-                //{
-                //  return BadRequest("");
-                //}
             }
             catch (Exception ex)
             {

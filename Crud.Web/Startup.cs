@@ -31,6 +31,7 @@ namespace Crud.Web
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             var connectionString = Configuration.GetConnectionString("CrudDB");
+           
             services.AddDbContext<CrudContexto>(option => 
                                                         option.UseLazyLoadingProxies()
                                                                   .UseSqlServer(connectionString,
