@@ -10,7 +10,10 @@ namespace Crud.Dominio.Entidades
             get { return _mensagensValidacao ?? (_mensagensValidacao = new List<string>()); }
         }
 
-        public abstract void Validate();
+        public virtual void Validate()
+        {
+
+        }
 
         public bool EhValido
         {

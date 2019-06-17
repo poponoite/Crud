@@ -14,7 +14,6 @@ namespace Crud.Repositorio.Config
                 .HasMaxLength(50)
                 .HasColumnType("varchar");
 
-
         }
     }
 }

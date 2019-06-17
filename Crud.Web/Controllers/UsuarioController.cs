@@ -13,7 +13,7 @@ namespace Crud.Web.Controllers
             _usuarioRepositorio = usuarioRepositorio;
         }
 
-        [HttpGet("Usuario/Get")]
+        [HttpGet("Get")]
         public IActionResult Get()
         {
             try
